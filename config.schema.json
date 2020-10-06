@@ -22,9 +22,9 @@
           "type": "boolean"
         },
         "admin": {
-          "default": -1,
+          "default": [],
           "description": "指定管理者QQ，请务必设置",
-          "type": "number"
+          "type": "array"
         },
         "enablePM": {
           "default": true,
@@ -63,7 +63,7 @@
           "default": false
         },
         "hideImgWhenLowAcc": {
-          "$id": "#/properties/bot/properties/hideImgWhenLowAcc",
+          "$id": "#/properries/bot/properties/hideImgWhenLowAcc",
           "type": "boolean",
           "description": "saucenao 得到低相似度结果时隐藏结果缩略图（包括 ascii2d 和 nhentai）",
           "default": false

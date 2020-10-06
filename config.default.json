@@ -12,7 +12,7 @@
   },
   "bot": {
     "debug": false,
-    "admin": -1,
+    "admin": [],
     "enablePM": true,
     "enableGM": true,
     "autoAddFriend": false,

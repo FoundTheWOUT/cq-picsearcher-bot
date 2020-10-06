@@ -48,7 +48,8 @@ function parseArgs(str, enableArray = false) {
 function ctxAvailable(ctx) {
   const setting = global.config.bot.reminder;
   //  限制场景
-  if (ctx.user_id !== global.config.bot.admin) {
+  // if (ctx.user_id !== global.config.bot.admin) {
+  if (!global.config.bot.admin.includes(ctx.user_id)) {
     if (setting.onlyAdmin) {
       return false;
     } else if (setting.onlyPM) {

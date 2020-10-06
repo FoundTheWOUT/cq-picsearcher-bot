@@ -182,7 +182,7 @@ function commonHandle(e, context) {
 
 // 管理员私聊消息
 function adminPrivateMsg(e, context) {
-  if (context.user_id !== global.config.bot.admin) return;
+  if (!global.config.bot.admin.includes(context.user_id)) return;
 
   const args = parseArgs(context.message);
 
@@ -277,7 +277,8 @@ function privateAndAtMsg(e, context) {
 
 // 调试模式
 function debugPrivateAndAtMsg(e, context) {
-  if (context.user_id !== global.config.bot.admin) {
+  // if (context.user_id !== global.config.bot.admin) {
+  if (!global.config.bot.admin.includes(context.user_id)) {
     e.stopPropagation();
     return global.config.bot.replys.debug;
   }
@@ -287,7 +288,8 @@ function debugPrivateAndAtMsg(e, context) {
 }
 
 function debugGroupMsg(e, context) {
-  if (context.user_id !== global.config.bot.admin) {
+  // if (context.user_id !== global.config.bot.admin) {
+  if (!global.config.bot.admin.includes(context.user_id)) {
     e.stopPropagation();
     return;
   }
@@ -435,7 +437,8 @@ async function searchImg(context, customDB = -1) {
       if (!hasCache) {
         // 检查搜图次数
         if (
-          context.user_id !== global.config.bot.admin &&
+          // context.user_id !== global.config.bot.admin &&
+          !global.config.bot.admin.includes(context.user_id) &&
           !logger.canSearch(context.user_id, global.config.bot.searchLimit)
         ) {
           replyMsg(context, global.config.bot.replys.personLimit, false, true);
@@ -584,12 +587,14 @@ function hasImage(msg) {
  * @param {string} message 消息
  */
 function sendMsg2Admin(message) {
-  if (bot.isReady() && global.config.bot.admin > 0) {
-    bot('send_private_msg', {
-      user_id: global.config.bot.admin,
-      message,
-    });
-  }
+  global.config.bot.admin.forEach(v => {
+    if (bot.isReady() && v > 0) {
+      bot('send_private_msg', {
+        user_id: v,
+        message,
+      });
+    }
+  });
 }
 
 /**
