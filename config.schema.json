@@ -288,6 +288,74 @@
           },
           "additionalProperties": true
         },
+        "boss": {
+          "$id": "#/properties/bot/properties/setu",
+          "type": "object",
+          "description": "轴",
+          "properties": {
+            "enable": {
+              "$id": "#/properties/bot/properties/boss/properties/enable",
+              "type": "boolean",
+              "description": "开启轴",
+              "default": false
+            },
+            "a1": {
+              "$id": "#/properties/bot/properties/boss/properties/a1",
+              "type": "string",
+              "default": ""
+            },
+            "a2": {
+              "$id": "#/properties/bot/properties/boss/properties/a2",
+              "type": "string",
+              "default": ""
+            },
+            "a3": {
+              "$id": "#/properties/bot/properties/boss/properties/a3",
+              "type": "string",
+              "default": ""
+            },
+            "a4": {
+              "$id": "#/properties/bot/properties/boss/properties/a4",
+              "type": "string",
+              "default": ""
+            },
+            "a5": {
+              "$id": "#/properties/bot/properties/boss/properties/a5",
+              "type": "string",
+              "default": ""
+            },
+            "b1": {
+              "$id": "#/properties/bot/properties/boss/properties/b1",
+              "type": "string",
+              "default": ""
+            },
+            "b2": {
+              "$id": "#/properties/bot/properties/boss/properties/b2",
+              "type": "string",
+              "default": ""
+            },
+            "b3": {
+              "$id": "#/properties/bot/properties/boss/properties/b3",
+              "type": "string",
+              "default": ""
+            },
+            "b4": {
+              "$id": "#/properties/bot/properties/boss/properties/b4",
+              "type": "string",
+              "default": ""
+            },
+            "b5": {
+              "$id": "#/properties/bot/properties/boss/properties/b5",
+              "type": "string",
+              "default": ""
+            },
+            "b6": {
+              "$id": "#/properties/bot/properties/boss/properties/b6",
+              "type": "string",
+              "default": ""
+            }
+          }
+        },
         "regs": {
           "$id": "#/properties/bot/properties/regs",
           "type": "object",
@@ -310,6 +378,12 @@
               "$id": "#/properties/bot/properties/regs/properties/setu",
               "type": "string",
               "description": "setu，如果要支持 r18 和关键词参数需要使用捕获组，在附加功能中详解",
+              "default": ""
+            },
+            "boss": {
+              "$id": "#/properties/bot/properties/regs/properties/boss",
+              "type": "string",
+              "description": "返回轴",
               "default": ""
             }
           },
@@ -397,6 +471,11 @@
               "$id": "#/properties/bot/properties/replys/properties/setuQuotaExceeded",
               "type": "string",
               "description": "setu API 调用达到上限",
+              "default": ""
+            },
+            "noneBoss": {
+              "$id": "#/properties/bot/properties/replys/properties/noneBoss",
+              "type": "string",
               "default": ""
             }
           },

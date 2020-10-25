@@ -57,10 +57,25 @@
       "whiteDeleteTime": 0,
       "r18OnlyInWhite": true
     },
+    "boss": {
+      "enable": false,
+      "a1": "a1",
+      "a2": "",
+      "a3": "",
+      "a4": "",
+      "a5": "",
+      "b1": "",
+      "b2": "",
+      "b3": "",
+      "b4": "",
+      "b5": "",
+      "b6": ""
+    },
     "regs": {
       "searchModeOn": "^竹竹搜[图圖]$",
       "searchModeOff": "^[谢謝]+竹竹$",
-      "setu": "^竹竹.*[来來发發给給][张張个個幅点點份]?(?<r18>[Rr]18的?)?(?<keyword>.*?)?的?[色瑟][图圖]|^--setu$"
+      "setu": "^竹竹.*[来來发發给給][张張个個幅点點份]?(?<r18>[Rr]18的?)?(?<keyword>.*?)?的?[色瑟][图圖]|^--setu$",
+      "boss": "轴(?<times>.*?)?(?<bossnum>.*?)?"
     },
     "replys": {
       "default": "必须要发送图片我才能帮你找噢_(:3」」\n支持批量！",
@@ -75,7 +90,8 @@
       "setuLimit": "乖，要懂得节制噢 →_→",
       "setuError": "瑟图服务器爆炸惹_(:3」∠)_",
       "setuReject": "很抱歉，该功能暂不开放_(:3」」",
-      "setuQuotaExceeded": ""
+      "setuQuotaExceeded": "",
+      "noneBoss": "没有轴！"
     },
     "ocr": {
       "use": "ocr.space",

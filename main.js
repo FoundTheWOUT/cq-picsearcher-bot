@@ -19,6 +19,7 @@ import antiBiliMiniApp from './src/plugin/antiBiliMiniApp';
 import logError from './src/logError';
 import event from './src/event';
 import corpus from './src/plugin/corpus';
+import sendBoss from './src/plugin/boss';
 const ocr = require('./src/plugin/ocr');
 
 const bot = new CQWebSocket(global.config.cqws);
@@ -172,6 +173,10 @@ function commonHandle(e, context) {
   // reminder
   if (global.config.bot.reminder.enable) {
     if (rmdHandler(context)) return true;
+  }
+
+  if (global.config.bot.boss.enable) {
+    if (sendBoss(context, replyMsg)) return true;
   }
 
   //  反哔哩哔哩小程序
